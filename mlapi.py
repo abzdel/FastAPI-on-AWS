@@ -6,7 +6,7 @@ import uvicorn
 
 app = FastAPI()
 
-class Item(BaseModel):
+class Stats(BaseModel):
     PTS_5: float
     stl_5:float
     ft_pct_5: float
@@ -29,16 +29,18 @@ async def root():
 
   
 @app.get("/predict")
-async def scoring_endpoint(item:Item):
-    df = pd.DataFrame([item.dict().values()], columns=item.dict().keys())
-    y_hat = model.predict(df)
-    return {"prediction": y_hat}
-
-
+async def predict_ppg(data:Stats):
     
-@app.get("/items")
-async def create_item(item: Item):
-    return item
+    data = data.dict()
+    PTS_5 = data["PTS_5"]
+    stl_5 = data["stl_5"]
+    ft_pct_5 = data["ft_pct_5"]
+    min_5 = data["min_5"]
+    
+    pred = model.predict([[PTS_5, stl_5, ft_pct_5, min_5]])
+    return {"prediction": pred}
+
+
     
     
 #if __name__ == "__main__":

@@ -20,7 +20,8 @@ print(f"here is our output: {r}")
 
 
 X = [16.5, 0.3, 87.2, 41.7]
+features = ["PTS_5", "stl_5", "ft_pct_5", "min_5"]
 
-url_string = host + f'/predict?f0={X[0]}&f1={X[1]}&f2={X[2]}&f3={X[3]}'
+url_string = host + f'/predict?{features[0]}={X[0]}&{features[1]}={X[1]}&{features[2]}={X[2]}&{features[3]}={X[3]}'
 r = requests.get(url_string)
 print(r.json())
