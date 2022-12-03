@@ -28,7 +28,7 @@ async def root():
 
 
   
-@app.get("/predict")
+@app.post("/predict")
 async def predict_ppg(data:Stats):
     
     data = data.dict()
