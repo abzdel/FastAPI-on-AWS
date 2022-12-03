@@ -40,7 +40,7 @@ async def predict_ppg(data:Stats):
     pred = model.predict([[PTS_5, stl_5, ft_pct_5, min_5]])
     return {"prediction": pred}
 
-@app.post("/test"):
+@app.post("/test")
 async def test_post(data:Stats):
         
     pred = model.predict(data)
