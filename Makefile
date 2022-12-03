@@ -6,6 +6,6 @@ format:
 	black dblib/*.py
 
 lint:
-	pylint --disable=R,C * model
+	pylint --disable=R,C *.py *.ipynb
 
 all: install lint format
