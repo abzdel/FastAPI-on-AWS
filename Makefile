@@ -3,9 +3,9 @@ install:
 		pip install -r requirements.txt
 
 format:
-	black dblib/*.py
+	black *.py
 
 lint:
-	pylint --disable=R,C *.py *.ipynb
+	pylint --disable=R,C *.py
 
 all: install lint format
