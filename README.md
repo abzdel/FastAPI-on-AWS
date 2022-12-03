@@ -1,3 +1,5 @@
+[![CI](https://github.com/abzdel/FastAPI-on-AWS/actions/workflows/makefile.yml/badge.svg)](https://github.com/abzdel/FastAPI-on-AWS/actions/workflows/makefile.yml)
+
 # FastAPI-on-AWS
 Continuous delivery of an API built on FastAPI and hosted on AWS.
 
