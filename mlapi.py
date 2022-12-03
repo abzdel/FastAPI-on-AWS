@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
-import pandas as pd
+#import pandas as pd
 import uvicorn
 
 app = FastAPI()
@@ -14,8 +14,8 @@ class Stats(BaseModel):
     
     
 
-df = pd.read_csv("sample.csv")
-df.drop(["Unnamed: 4"], axis=1, inplace=True)
+#df = pd.read_csv("sample.csv")
+#df.drop(["Unnamed: 4"], axis=1, inplace=True)
 
     
 with open("model/ppg_model.pkl", "rb") as f:
